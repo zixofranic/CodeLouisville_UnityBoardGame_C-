@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 636ef666bee1fc54db5e8a71f9a55396
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - omoColor1: {fileID: 2100000, guid: fc31c1073c716408187b3305dceec395, type: 2}
+  - omoColor2: {fileID: 2100000, guid: 04a427bb5204940dbafc04ebed1af0c8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

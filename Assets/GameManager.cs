@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
     BoardManager board;
+    private LayerMask OmoSelectionLayer;
     
     void Start()
     {
@@ -18,5 +19,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void selection()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit rayHit;
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition),out rayHit, 25, OmoSelectionLayer))
+            {
+                rayHit.collider.GetComponent<Pieces>().
+            }
+        }
     }
 }

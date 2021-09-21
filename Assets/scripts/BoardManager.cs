@@ -8,16 +8,16 @@ public class BoardManager : MonoBehaviour
     [SerializeField] GameObject omoPieces = null;
     [SerializeField] Material boardwhite=null;
     [SerializeField] Material boardBlack=null;
-    [SerializeField] Material omoColor1=null;
-    [SerializeField] Material omoColor2=null;
     [SerializeField]  private int  rowAndCol = 8;
     [HideInInspector] public static string[] tilesName = new string[] { "a", "b", "c", "d", "e", "f", "g", "h" };
 
     GameObject[,] squares;
+    GameObject[,] omos;
     public void CreateBoard()
     {
         //Creating a 2D array and setting the rows and collums to the value set in rowAndCol variable
          squares = new GameObject[rowAndCol, rowAndCol];
+        omos = new GameObject[rowAndCol, rowAndCol];
         for (int i=0; i< rowAndCol; i++)
         {
             for (int j=0; j< rowAndCol; j++)
@@ -40,6 +40,20 @@ public class BoardManager : MonoBehaviour
 
             }
                 
+        }
+        for (int i = 0; i < rowAndCol; i++)
+        {
+            for (int j = 0; j < rowAndCol; j++)
+            {
+                omos[i, j] = Instantiate(omoPieces, new Vector3(i, 0.2f, j), Quaternion.identity);
+                //[i, j].GetComponent<Renderer>().material = omoColor1; 
+
+                omos[i, j].transform.SetParent(this.transform);
+                // Naming all the omos for future reference
+                omos[i, j].name = "omo" + tilesName[i] + (j + 1);
+
+            }
+
         }
     }
 }
